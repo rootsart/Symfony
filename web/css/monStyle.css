@@ -1,0 +1,353 @@
+
+form span a {
+	color: blue;
+	text-decoration: none;
+	font-size: 12px;
+	-webkit-transition: color 0.3s linear;
+	-moz-transition: color 0.3s linear;
+	-o-transition: color 0.3s linear;
+	transition: color 0.3s linear;
+}
+
+.adresse{
+	display: inline-block;
+	border:0px solid green;
+	padding:3px;
+	background: ;
+	width: 200px;
+	padding: 4px;
+	vertical-align: top;
+}
+
+/*label{
+	display: inline;
+	width: 100px;
+	margin-right: 20px;
+	vertical-align: top;
+	text-align: right;
+}*/
+
+.input-password{
+	display: inline-block;
+	border:1px solid #f7f7f7;
+	height:2em;
+	background: #f7f7f7;
+	padding: 4px;
+	vertical-align: middle;
+	border-radius:3px;
+	width:7em;
+}
+
+.input-email{
+	display: inline-block;
+	border:1px solid #f7f7f7;
+	height:2em;
+	background: #f7f7f7;
+	padding: 4px;
+	vertical-align: middle;
+	border-radius:3px;
+	width:10em;
+}
+
+.global-connexion{
+	border:1px solid gray;
+	height:3em;
+	background: #f7f7f7;
+	vertical-align: bottom;
+}
+
+.verification-mdp{
+	height :10px;
+	border:1px solid gray;
+	width: 30px;
+}
+
+.top-bar #deconnexion a{
+	margin-top:9px;
+	height:23px;
+	border-radius:5px;
+	color: green;
+	line-height: 23px;
+	width: 120px;
+	text-align: center;
+}
+
+.top-bar #deconnexion a:hover{
+	margin-top:9px;
+	height:23px;
+	border-radius:5px;
+	color: blue;
+	line-height: 23px;
+	width: 120px;
+	text-align: center;
+}
+
+.btn-valide{
+	display: inline-block;
+	width: 80em;
+	
+	vertical-align:middle;
+	text-align: middle;
+	
+}
+
+
+ .shopping-cart-text-center{
+ 	min-width:400px;
+ 	border:solid red 1px;
+ 	
+ }
+
+ .row-cart-details{
+ 	min-width:400px;
+ 	border:solid red 1px;
+ 	height:150px;
+ }
+
+
+.inscription-form{
+	border:px solid gray;
+	display:block;
+	height:600px;
+}
+
+.inscription-form label{
+	color:gray;
+	width:190px;
+	background:;
+	display:inline-block;
+	text-align:left;
+	margin:0;
+}
+
+form input {
+	
+	border:0;
+	border-bottom:1px solid #ebebeb;
+
+}
+form input:focus {
+	border-top: none !important;
+	border-left: none !important;
+	border-right: none !important;
+	border-bottom:solid 1px #ebebeb !important;
+	outline-style:none !important;
+	
+
+}
+
+form input:invalid {
+	border-color: none;
+	outline-style:none !important;
+	box-shadow: none;
+
+}
+
+ 
+
+form input:hover{
+	background:#ebebeb;
+}
+
+
+
+.option-profil:hover{
+	background:;
+}
+
+#error span{
+	font-size:14px;
+	background:green;
+	display: block;
+	height:100%;
+	width:100%;
+	border:0.1em solid gray;
+	line-height: 10px;
+	color:white;
+	font-style: italic;
+}
+
+
+.label-Connect{
+	display:block;
+	margin:0;
+	padding:0;
+	border:solid red 0em;
+	text-align:left;
+	line-height: 24px;
+	background:none;
+	height:20px;
+}
+.contact-form input:hover{
+	padding:0;
+	margin:0;
+	background:#d5e1d6;
+}
+.contact-form .widget-connect:hover{
+	padding:0;
+	margin:0;
+	background:#ebebeb;
+}
+
+.inscription-form input:hover{
+	padding:0;
+	margin:0;
+	background:#ebebeb;
+}
+ input, select{
+	padding:0;
+	margin:0;
+	background:#d5e1d6;
+	border-bottom:1px solid #ebebeb ;
+}
+.inscription-form textarea{
+	padding:0;
+	margin:0;
+	background:#d5e1d6;
+	border:0px !important;
+}
+
+textarea:hover{
+	padding:0;
+	margin:0;
+	background:#ebebeb;
+}
+.label-choices-personneType label{
+	width: 40px;
+}
+
+
+
+
+
+
+#fermer-connect{
+	cursor:pointer;
+	display:block;
+	width:31px;
+	height:31px;
+	line-height:20px;
+	float:right;
+	margin-right: 3px;
+	margin-top: 3px;
+	border-radius:5px;
+	padding:0;
+}
+
+#fermer-connect:hover{
+	border:solid 0.1em #ebebeb;
+}
+
+#fermer-connect-parent{
+	line-height: 36px;
+	height:36px;
+	border:solid 0em #ebebeb;
+	width:100%;
+}
+
+/* Permet au place holder d'avoir leur propre style idépendamment de celui de leur input*/
+input:placeholder-shown {
+  font-size:10px;
+  font-style:italic;
+}
+#infos_persos{
+	background:Gainsboro;
+	margin-bottom: 0px;
+	
+}
+
+
+
+
+/********************   Menu KPN   **********************/
+#titre_profile{
+	border:solid 0em black;
+	width:244px;
+	height:30px;
+	color:#002000;
+	margin-left:156px;
+	border:solid 0em blue;
+}
+#titre_profile span H5{
+	font-weight:bold !important;
+	margin-top:2.5%;
+
+	padding:0;
+	/*font-family: "Times New Roman", Times, serif;*/
+}
+
+.last:first-child{
+	background:WhiteSmoke;
+
+}
+.last:hover{
+	background:#ebebeb;
+	font-size: 15px;
+}
+.first{
+	border-bottom:0.1em solid white;	
+
+}
+.menu_level_1{
+	background:WhiteSmoke;
+	border:solid red 0em;
+}
+#menu_knp{
+	cursor:pointer;
+	width:250px;
+	float:left;
+	padding-left:7px;
+	margin-left:150px;
+	
+}
+
+#idListe, #infos, #comm{
+	background:Gainsboro;
+}
+#idListe:hover{
+	background:LightGrey;
+	font-weight: bold;
+}
+#infos:hover{
+	background:LightGrey;
+	font-weight: bold;
+}
+#comm:hover{
+	background:LightGrey;
+	font-weight: bold;
+}
+#infos >span{
+	display:block;
+	width:100%;
+	background:;
+}
+
+#infos .first, #idListe .current,#infos >span{
+	border-bottom:solid 0.1em white;
+}
+
+#infos .first, #idListe .current{
+	border-bottom:solid 0.1em white;
+}
+.menu_level_1{
+	display:none;
+}
+.menu_level_1 a{
+	font-size: 12px;
+	font-family: "Times New Roman", Times, serif;
+	color:gray;
+}
+.menu_level_1 a:hover{
+	color:green;
+	
+	font-size: 13px;
+}
+.menu_level_1 .first:hover{
+	color:green;
+	background:#ebebeb;
+	
+}
+
+
+
+/***********************************************************/
