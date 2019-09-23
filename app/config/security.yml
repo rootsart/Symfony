@@ -1,0 +1,51 @@
+# app/config/security.yml
+
+security:
+  encoders:
+    Symfony\Component\Security\Core\User\User: plaintext
+    GG\UserBundle\Entity\Usager: plaintext
+
+  role_hierarchy:
+    ROLE_ARTISANT:    [ROLE_USER]
+    ROLE_COMMERCANT:  [ROLE_USER, ROLE_ARTISANT]
+    ROLE_ADMIN:       [ROLE_USER, ROLE_ARTISANT, ROLE_COMMERCANT]
+    ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+
+  providers:
+    in_memory:
+      memory:
+        users:
+          user:  { password: userpass, roles: [ 'ROLE_USER' ] }
+          admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+
+    provider_db:
+      id: fos_user.user_provider.username
+      #entity: {class:GGUserBundle:Usager, property: username}
+
+  firewalls:
+    dev:
+      pattern: ^/(_(profiler|wdt)|css|images|js)/
+      security: false
+
+    truefire:
+      pattern:   ^/
+      anonymous: true
+      provider: provider_db
+      form_login:
+        success_handler: mon_success_handler
+        failure_handler: mon_success_handler
+        login_path: fos_user_security_login
+        check_path: fos_user_security_check
+        remember_me: true            # On active la possibilité du "Se souvenir de moi" (désactivé par défaut)
+      logout:
+        path:       fos_user_security_logout
+        target:     homepage
+
+      remember_me:
+        secret: '%secret%'        # On définit la clé pour le remember_me (%secret% est un parametre de parameters.yml)
+        lifetime: 60             # 15min en secondes
+        always_remember_me: false
+
+  access_control:
+    - { path: ^/boutique/admin, roles: ROLE_ADMIN }
+    #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }

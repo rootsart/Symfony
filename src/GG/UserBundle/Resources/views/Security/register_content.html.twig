@@ -1,0 +1,79 @@
+{% extends "GGBoutiqueBundle::layout.html.twig" %}
+
+{% block parallax1 %}
+{% endblock %} 
+
+{% block parallax2 %}
+{% endblock %}
+
+{% block menu %}
+{% endblock %}
+
+{% block title %}
+	Inscriptions
+{% endblock %}  
+
+
+ {% block body %}  
+    <section class="section-p-30px pages-in">
+	<div class="container">
+		<div class="row">
+				
+					{{ form_start(form, {'attr': {'class': 'contact-form'}}) }} 
+					{{ form_errors(form) }}
+						<div id="identite" class="col-sm-4" style="border:1px solid #f7f7f7;margin-bottom:20px;padding:10px;">
+							<div class="col-sm-7" style="border:solid black 0px;">
+									{{ form_label(form.username, "Username", {'label_attr': {'class': 'col-sm-5 control-label'}}) }}
+										{{ form_errors(form.username) }}
+
+									<div class="col-sm-5">
+										{{ form_widget(form.username, {'attr': {'class': ''}}) }}
+									</div>
+							</div><br><br>
+							<div class="col-sm-4" style="border:solid black 0px;">
+									{{ form_label(form.password, "Password", {'label_attr': {'class': 'col-sm-3 control-label', 'style':'margin-left:100px;'}}) }}
+										{{ form_errors(form.password) }}
+
+									<br CLEAR="all"><div class="col-sm-7" style="margin-left:100px;">
+										{{ form_widget(form.password, {'attr': {'class': ''}}) }}
+									</div>
+							</div><br CLEAR="all">
+
+							<div class="col-sm-4" style="border:solid black 0px;">
+									{{ form_label(form.roles, "Roles", {'label_attr': {'class': 'col-sm-3 control-label', 'style':'margin-left:100px;'}}) }}
+										{{ form_errors(form.roles) }}
+
+									<br CLEAR="all"><div class="col-sm-7" style="margin-left:100px;">
+										{{ form_widget(form.roles, {'attr': {'class': ''}}) }}
+									</div>
+							</div>
+							<br CLEAR="all">
+							<div class="col-sm-4" style="border:solid black 0px;">
+									{{ form_label(form.salt, "salt", {'label_attr': {'class': 'col-sm-3 control-label', 'style':'margin-left:100px;'}}) }}
+										{{ form_errors(form.salt) }}
+
+									<br CLEAR="all"><div class="col-sm-7" style="margin-left:100px;">
+										{{ form_widget(form.salt, {'attr': {'class': ''}}) }}
+									</div>
+							</div>
+						</div><br><br CLEAR="all">
+						
+						
+						
+							
+							
+
+							
+	</div>						
+					{{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
+
+					{{ form_rest(form) }}
+    				{{ form_end(form) }}
+		</div>
+	</div>
+	</section>
+{% endblock %}
+
+
+
+	

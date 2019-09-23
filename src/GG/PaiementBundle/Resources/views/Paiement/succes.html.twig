@@ -1,0 +1,25 @@
+{% extends "GGBoutiqueBundle::layout.html.twig" %}
+
+{% block parallax1 %}
+{% endblock %} 
+
+{% block parallax2 %}
+{% endblock %}
+
+{% block menu %}
+{% endblock %}
+
+{% block title %}
+  Paiement valide
+{% endblock %}  
+
+{% block body %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+	<div style="width:100%;text-align:center;margin-top:50px;">
+	<div style="width:50%;text-align:center;margin-top:50px;border:0.1em solid gray;margin:auto;">
+	    	<p>Merci de votre confiance. Votre achat a bien été enregistré, toutes les informations concernant votre transaction sont consultables 
+	    	via votre mail. Vous recevrez prochainement un e-mail contenant le N° de Suivi de votre colis.</p>
+    </div>
+	</div>
+{% endblock %}  

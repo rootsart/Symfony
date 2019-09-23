@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="{{ _charset }}" />
+        <title> Erreur: {{ status_code }}</title>
+    </head>
+    <body style="background:#FEFEE2;">
+
+        <h2>Impossible de donner suite à votre requête,  cette page est introuvable, ou n'existe pas.</h2>
+        <!--h2>Le système retourne ce code : "{{ status_code }} {{ status_text }}".</h2-->
+
+        <div>
+            <br>Votre action ne peut avoir de resultat.<br> Merci de votre compréhension.
+            <br><a href="{{path('homepage')}}">retour accueil</a>
+        </div>
+    </body>
+</html>

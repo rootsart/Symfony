@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="{{ _charset }}" />
+        <title> Problème : {{ status_code }}</title>
+    </head>
+    <body style="background:green;">
+
+        <h2>Impossible de donner suite à votre requête,  cette page est :{{ status_text }}</h2>
+        <h2>Le système retourne ce code : "{{ status_code }} {{ status_text }}".</h2>
+
+        <div>
+            Votre action ne peut avoir de resultat. Merci de votre compréhension.
+            <a href="{{path('homepage')}}">retour accueil</a>
+        </div>
+    </body>
+</html>

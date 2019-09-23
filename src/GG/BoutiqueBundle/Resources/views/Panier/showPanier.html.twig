@@ -1,0 +1,208 @@
+
+
+{% extends "GGBoutiqueBundle::layout.html.twig" %}
+
+{% block parallax1 %}
+{% endblock %} 
+
+{% block parallax2 %}
+{% endblock %}
+
+{% block menu %}
+{% endblock %}
+
+{% block title %}
+  Panier
+{% endblock %}  
+
+{% block body %}
+<!-- CONTENT START -->
+  <div class="content"> 
+    
+    <!--======= SUB BANNER =========-->
+    <section class="sub-banner">
+          <!--  Tittle -->
+          <div class="tittle tittle-2">
+            <h5>PANIER</h5>
+            <p class="font-playfair">Finaliser vos achats </p><div id="test"></div>
+          </div>
+    </section>
+    
+    <!--======= PAGES INNER =========-->
+    <section class="section-p-30px pages-in chart-page">
+      <div class="container" > 
+        
+ 
+        
+        <!-- Payments Steps -->
+        <div id="container-panier">
+         
+          
+          
+            
+            
+              <div id="panier-titres" style="border:0.1em solid #d5e1d6;background:#d5e1d6;text-align:left;margin-bottom:2px;" >
+            
+              <li class="panier-th" >
+                 
+                PRODUITS
+             
+              </li>
+            
+              <!-- NAME -->
+              <li class="panier-th" id="ref-th">
+                
+                NOM
+              
+              </li>
+
+              <li class="panier-th" id="qte-th">
+                 
+                Qté
+              
+              </li>
+              <!-- QTY -->
+              <li class="panier-th" id="stock-th">
+                 
+                STOCK
+             
+              </li>
+              <!-- PRICE -->
+              <li class="panier-th" id="prix-th">
+                
+                PRIX 
+              
+              </li>
+              <!-- TOTAL PRICE -->
+              <li class="panier-th" id="tva-th">
+                
+                TVA
+              
+              </li>
+              <!-- TOTAL PRICE -->
+              <li class="panier-th">
+                
+                TOTAL
+              
+              </li>
+              <li class="col-sm-1" id="total-th"> </li>
+           
+          </div>
+         
+          
+          <!--?if(isset($_SESSION['client']) && (isset($_SESSION['panier'])) && $_SESSION['panier']->montantPanier() != 0){
+           foreach ($panier_elements->afficherPanier() as $key => $article) {?-->
+
+
+          {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}  
+          {# dump(app.session.get('panier').getArticles().toArray())#}
+         {% for article in app.session.get('panier').getArticles() %}
+          <!-- Cart Details -->
+          <ul class="row cart-details" id="_{{article.getId() }}" style="padding:0;margin-bottom:2px;margin-left:0;border:solid #ebebeb 0.1em;background:#ebebeb;">
+            
+              <li class="panier-td" style="margin:0; padding:0;">
+                
+                <img  src="{% for artik in app.session.get('listeArticles')  %}   {# Je récupère les articles de la session#}
+                            {% if artik.id == article.getId() %}                  {# Je compare l'id de l'article en cours avec ceux de la session #}              
+                             {{asset(artik.photo.url)}}                           {# Je retourne l'url de l'article en session qui correspond à celui en cours #}
+                            {%endif%}
+                          {% endfor %}" 
+                      alt=""  
+                />
+              
+            </li>
+          
+            <li class="panier-td" style="padding:0; margin-left:0px;" id="ref-td">            
+                 
+                    <span style="padding:0; margin-left:0px;">{{ article.getReference() }}<span>
+               
+             
+            </li>
+
+             <li class="panier-td" id="qte-td" style="padding:0;">
+                <input type="text" value="">
+              </li> 
+              <!-- QTY -->
+              <li class="panier-td" id="stock-td" style="padding:0; margin-left:0px;">
+              <span>{{article.getStock()}}</span>
+               
+              </li>
+              
+              <!-- PRICE -->
+              <li class="panier-td" id="prix-td" style="padding:0; margin-left:0px;">
+                <span>{{ article.getPrix() }} €</span> 
+              </li>
+              <!-- TVA -->
+              <li class="panier-td" id="tva-td" style="padding:0; margin-left:0px;">
+                 <span>{{ article.Tva() }} €</span> 
+              </li>
+              <!-- TOTAL PRICE -->
+              <li class="panier-td"  style="padding:0; margin-left:0px;" id="total-td">
+               
+                 <span>{{ article.getPrix() }} €</span> 
+              </li>
+              
+              <!-- EDIT AND REMOVE -->
+              <li id="panier-croix" style="padding:0;">
+               
+               <a href="{{ path('gg_boutique_supPanier',{'id_article': article.getId()}) }}" id="{{article.getId()}}"><!--img id="croix" src="{{ asset('images/pot/croix.png') }}"/-->x</a>
+               
+              </li>
+        
+          </ul>
+          {% endfor%}
+          {% endif %}
+          {% if app.session.get('panier').getArticles() is not defined %}
+              Panier Vide
+          {% endif %}
+           <!--?}}elseif(!isset($_SESSION['client'])){
+                echo $panierErreurs;
+           }elseif(isset($_SESSION['client']) && isset($_SESSION['panier']) && $_SESSION['panier']->montantPanier() == 0){
+                echo $panierVide;
+           }?-->
+          
+          
+          
+          <!-- BTN INFO -->
+          <div class="btn-sec"> 
+            
+            <!-- CLEAR SHOPPING CART --> 
+            <a href="{{path('gg_boutique_viderPanier')}}" class="btn btn-dark"> <i></i> VIDER LE PANIER </a> 
+          
+            
+            <!-- CONTINUE SHOPPING --> 
+            <a href="{{path('gg_boutique_article')}}" class="btn btn-dark right-btn"> CONTINUER VOTRE SHOPPING </a> </div>
+          
+          <!-- SHOPPING INFORMATION -->
+          <div class="cart-ship-info">
+            <div class="row"> 
+              
+        
+        
+        
+        
+              
+              <!-- SUB TOTAL -->
+              <div class="col-sm-4">
+                <div class="grand-total"> <span>SUB TOTAL: <span id="montantHT">{{ app.session.get('panier').getMontant()is defined ? app.session.get('panier').getMontant() : "0"}}<!--?if(isset($_SESSION['client']) && isset($_SESSION['panier']) && $_SESSION['panier']->montantPanier() != 0) {
+                  echo $panier_elements->montantPanier() . " Euros";}else{echo "0.00 ";}?--> </span></span>
+                  <h4>Prix TTC: <span id="montantTTC"> {{ app.session.get('panier').getMontant()is defined ? app.session.get('panier').getMontantTTC() : "0"}} </span></h4>
+                  <a href="{{path('gg_boutique_commande')}}" class="btn">VALIDER</a>
+
+              <!--form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="T73NSDXL7YBGG">
+                <input type="image" src="https://www.paypalobjects.com/fr_FR/FR/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal, le réflexe sécurité pour payer en ligne">
+                <img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
+              </form-->
+
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endblock %}  
+      

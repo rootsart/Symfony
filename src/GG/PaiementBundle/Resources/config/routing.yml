@@ -1,0 +1,38 @@
+gg_paiement_homepage:
+    path:     /
+    defaults: { _controller: GGPaiementBundle:Default:index }
+
+gg_paiement_payer:
+    path:     /payer
+    defaults: { _controller: GGPaiementBundle:Paiement:details }
+
+payment_complete:
+    path:     /paiementcomplete/{id}
+    defaults: { _controller: GGPaiementBundle:Paiement:complete }
+    
+
+payment_cancel:
+    path:     /paiementcancel/{id}
+    defaults: { _controller: GGPaiementBundle:Paiement:cancel }
+
+payment_return:
+    path:     /returnUrl
+    defaults: { _controller: GGPaiementBundle:Paiement:returnUrl }
+
+payment_succes:
+    path:     /paymentSucces
+    defaults: { _controller: GGPaiementBundle:Paiement:paymentSucces }
+
+
+gg_paiement_payer_test:
+    path:     /test/{pluginControlller}
+    defaults: { _controller: GGPaiementBundle:Default:testPaiement }
+
+
+gg_paiement_payer_default:
+    path:     /testons
+    defaults: { _controller: GGPaiementBundle:Default:testPaiement }
+
+
+
+

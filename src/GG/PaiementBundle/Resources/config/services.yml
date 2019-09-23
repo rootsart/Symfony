@@ -1,0 +1,24 @@
+services:
+#    gg_paiement.example:
+#        class: GG\PaiementBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
+
+    paiement.plugin.paypal:
+        class: GG\PaiementBundle\Plugin\CreditCardPlugin
+        tags: [{name: payment.plugin}]
+
+
+    entity.plugin.controller:
+        class: JMS\Payment\CoreBundle\PluginController\EntityPluginController
+        tags: [{name: entity.plugin}]
+        arguments: 
+            $entityManager: "@doctrine.orm.entity_manager"
+            #$options: 
+                #payment_class: [GGPaiementBundle:OrderPayment]
+            $options:
+              payment_instruction_class: JMS\Payment\CoreBundle\Entity\PaymentInstruction
+              payment_class: JMS\Payment\CoreBundle\Entity\Payment
+              result_class: JMS\Payment\CoreBundle\PluginController\Result
+              financial_transaction_class: JMS\Payment\CoreBundle\Entity\FinancialTransaction 
+              #GGPaiementBundle:OrderPayment
+

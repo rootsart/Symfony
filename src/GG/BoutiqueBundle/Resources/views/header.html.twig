@@ -1,0 +1,149 @@
+
+      
+      
+      <div class="sticky">
+      <div class="container">
+
+      <!-- Nav -->
+      <!-- Nav -->
+      {% block menuTop %}
+        <nav class="webimenu"> 
+          <!-- MENU BUTTON RESPONSIVE -->
+          <div class="menu-toggle" style="background:none;border:0.1em solid #ebebeb;" onmouseover="this.style.background='#F8F8FF';" onclick="this.style.background='GhostWhite';" onmouseout="this.style.background='none';"><img src="{{asset('images/menbar.png')}}"></div>
+          <ul class="ownmenu">
+          <li><a href={{ path('homepage') }}>Accueil</a></li>
+          <li><a href="#">News</a></li>  
+          
+          <li><a href="{{ path('gg_boutique_article') }}">Boutique</a>
+            <ul class="dropdown">
+              <li><a href="{{ path('gg_boutique_article_rubrique', {'rubrique': 'bijoux'}) }}">Bijoux</a>
+                <ul class="dropdown">
+                  <li><a href="{{ path('gg_boutique_article_categorie', {'categorie': 'collier'}) }}">Colliers</a></li>
+                  <li><a href="{{ path('gg_boutique_article_categorie', {'categorie': 'bracelet'}) }}">Bracelets</a></li>
+                  <li><a href="{{ path('gg_boutique_article_categorie', {'categorie': 'bague'}) }}">Bagues</a></li>
+                  <li><a href="{{ path('gg_boutique_article_categorie', {'categorie': 'boucleoreille'}) }}">Boucles D&acute;Oreilles</a></li>
+                 </ul>
+              </li>
+              
+              <li><a href="{{ path('gg_boutique_article_rubrique', {'rubrique': 'accessoire'}) }}">Accessoires</a>
+                <ul class="dropdown">
+                  <li><a href="{{ path('gg_boutique_article_categorie', {'categorie': 'sac'}) }}">Sacs</a></li>
+                  <li><a href="{{ path('gg_boutique_article_categorie', {'categorie': 'ceinture'}) }}">Ceintures</a></li>
+                </ul>
+              </li>
+              
+              
+              <li><a href="{{ path('gg_boutique_article_rubrique', {'rubrique': 'bien-etre'}) }}">Bien être</a>
+                <ul class="dropdown">
+                  <li><a href="{{ path('gg_boutique_article_categorie', {'categorie': 'encens'}) }}">Encens</a></li>
+                  <li><a href="{{ path('gg_boutique_article_categorie', {'categorie': 'huiles'}) }}">Huiles</a></li>
+                  <li><a href="{{ path('gg_boutique_article_categorie', {'categorie': 'parfum'}) }}">Parfum</a></li>
+                  <li><a href="{{ path('gg_boutique_article_categorie', {'categorie': 'huiles'}) }}">Huiles</a></li>
+                  <li><a href="{{ path('gg_boutique_article_categorie', {'categorie': 'savon'}) }}">Savon</a></li>
+                </ul>
+              </li>
+              <li><a href="{{ path('gg_boutique_article_rubrique', {'rubrique': 'deco-objets'}) }}">Déco & Objets</a>
+                <ul class="dropdown">
+                  <li><a href="{{ path('gg_boutique_article_categorie', {'categorie': 'tasse coco'}) }}">Tasse Coco</a></li>
+                  <li><a href="{{ path('gg_boutique_article_categorie', {'categorie': 'porte-monaie'}) }}">Porte-Monaie</a></li>
+                  <li><a href="{{ path('gg_boutique_article_categorie', {'categorie': 'coui calbasse'}) }}">Coui Calbasse</a></li> 
+                </ul>
+              </li>              
+            </ul>
+          </li>
+      
+          <li><a href="#">Créations</a></li>
+
+         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            <li><a href="{{ path('fos_user_profile_index') }}">Profil</a></li>
+         {% endif %}
+    
+          <li><a href="{{ path('gg_boutique_contact') }}">Contact</a></li>
+
+          {% endblock %}
+          
+          
+        
+
+          <!-- =============================================== -->
+          <!--======= Nombre d'articles dans le Panier=========-->
+          <!-- =============================================== -->
+          <li class="shop-cart"><a href="{{ path('gg_boutique_panier') }}"><img src="{{ asset('images/pot/cadi.png') }}"/></i></a> <span class="numb">{{ app.session.get('panier').getNb_articles() is defined ?app.session.get('panier').getNb_articles() : "0" }}</span>
+            <!--ul class="dropdown">
+              <li>
+                <div class="media">
+                  <div class="media-left">
+                    <div class="cart-img"><img class="media-object img-responsive" src="{{ asset('images/colliers/co-01.png') }}" alt="..."></div>
+                  </div>
+                  <div class="media-body">
+                    <h6 class="media-heading">Article en bois</h6>
+                    <span class="price">10.00 euros</span> <span class="qty">QTY: 2</span> 
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="media">
+                  <div class="media-left">
+                    <div class="cart-img"><img class="media-object img-responsive" src="{{ asset('images/bracelets/br-01.jpg') }}" alt="..."></div>
+                  </div>
+                  <div class="media-body">
+                    <h6 class="media-heading">Article en bois </h6>
+                    <span class="price">29.00 euros</span> <span class="qty">QTY: 01</span> 
+                  </div>
+                </div>
+              </li>
+              <li class="no-padding no-border">
+                <h5 class="text-center">TOTAL: 49.00 euros</h5>
+              </li>
+
+
+
+              <li class="no-padding no-border">
+                <div class="row">
+                <div class="col-xs-6"> <a href="#." class="btn btn-small">VIDER</a></div>
+                <div class="col-xs-6 "> <a href="#." class="btn btn-1 btn-small">VALIDER</a></div>
+                </div>
+              </li>
+            </ul-->
+          </li>
+          <!--======= SEARCH ICON =========-->
+          <li class="search-nav"><a href="#."><img src="{{ asset('images/pot/recherche.png') }}"/></i></a>
+            <ul class="dropdown">
+              <li class="row">
+                <div class="col-sm-4 no-padding">
+                  <select class="selectpicker">
+                    <option>Colliers</option>
+                    <option>Bracelets</option>
+                    <option>Boucle d&acute;Oreilles</option>
+                    <option>Bagues</option>
+                    <option>Sacs</option>
+                    <option>Ceintures</option>
+                    <option>Portes Monaies</option>
+                    <option>Encents</option>
+                    <option>Huiles</option>
+                    <option>Parfums</option>
+                    <option>Acessoires</option>
+                    <option>Tasse Coco</option>
+                    <option>Vase Coco</option>
+                   </select>
+                </div>
+                <div class="col-sm-8 no-padding">
+                  <input type="search" class="form-control" placeholder="Votre recherche ici...">
+                  <button type="submit"> <img src="{{ asset('images/pot/recherche1.png') }}"/></i> </button>
+                </div>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    </div>
+  </header>
+
+  
+ 
+ 
+    
+
+
+   

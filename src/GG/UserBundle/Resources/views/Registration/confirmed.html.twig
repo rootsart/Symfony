@@ -1,0 +1,24 @@
+{% extends "GGBoutiqueBundle::layout.html.twig" %}
+
+	{% block parallax1 %}
+	{% endblock %} 
+
+	{% block parallax2 %}
+	{% endblock %}
+
+	{% block menu %}
+	{% endblock %}
+
+	{% block title %}
+		Inscription
+	{% endblock %}  
+
+{% trans_default_domain 'FOSUserBundle' %}
+{% block body%}
+{% block fos_user_content %}
+    <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
+    {% if targetUrl %}
+    <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>
+    {% endif %}
+{% endblock fos_user_content %}
+{% endblock%}

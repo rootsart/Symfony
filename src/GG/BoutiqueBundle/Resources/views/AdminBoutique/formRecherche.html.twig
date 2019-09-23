@@ -1,0 +1,39 @@
+{% extends "GGBoutiqueBundle::layout.html.twig" %}
+
+{% block parallax1 %}
+{% endblock %} 
+
+{% block parallax2 %}
+{% endblock %} 
+
+{% block menu %}
+{% endblock %}
+
+{% block title %}
+	Modifier article
+{% endblock %}  
+
+ {% block body %}  
+    <section class="section-p-30px pages-in">
+		<div class="container" >
+			<div class="row" style="border:0.1em solide blue; background:SlateGray;height:5em;padding-left:10em;padding-bottom:5em;">
+				{{ form_start(form, {'attr': {'class': 'contact-form', 'id':'formRecherche'}}) }} 
+					{{ form_errors(form) }}
+
+						<div class="col-sm-4">
+							{{ form_label(form.article, "recherche", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+								{{ form_errors(form.article) }}
+								<div class="col-sm-7">
+									{{ form_widget(form.article, {'attr': {'class': 'form-control'}}) }}
+								</div>
+						</div>
+				<button type="submit" class="btn" id="recherche" style="display:block">Ok</button>	
+				
+				{{ form_rest(form) }}
+				{{ form_end(form) }}
+			</div>
+			<div id="erreurs" style="display:none"></div>
+		</div>
+		<div id="container_form" style="display:none; padding-top:1em; height:25em; width:78em; margin-left:9em;"></div>
+	</section>
+{% endblock %}

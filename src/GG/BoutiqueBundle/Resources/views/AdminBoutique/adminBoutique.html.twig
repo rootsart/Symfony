@@ -1,0 +1,20 @@
+{% extends "GGBoutiqueBundle::layout.html.twig" %}
+
+{% block parallax1 %}
+{% endblock %} 
+
+{% block parallax2 %}
+{% endblock %}
+
+{% block menu %}
+{% endblock %}
+
+{% block title %}
+  Administration
+{% endblock %}  
+
+{% block body %}
+<a href="{{path('gg_admin_ajout')}}">Ajouter un article</a>
+<a href="{{path('gg_admin_supprimer_default')}}">Supprimer un article</a>
+<a href="{{path('gg_admin_modifier_default')}}">modifier un article</a>
+{% endblock %}

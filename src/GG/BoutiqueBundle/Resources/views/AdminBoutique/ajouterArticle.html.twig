@@ -1,0 +1,103 @@
+{% extends "GGBoutiqueBundle::layout.html.twig" %}
+
+{% block parallax1 %}
+{% endblock %} 
+
+{% block parallax2 %}
+{% endblock %} 
+
+{% block menu %}
+{% endblock %}
+
+{% block title %}
+	Ajouter article
+{% endblock %}  
+
+ {% block body %}  
+    <section class="section-p-30px pages-in">
+	<div class="container">
+		<div class="row">
+				
+					{{ form_start(form, {'attr': {'class': 'contact-form'}}) }} 
+							{{ form_errors(form) }}
+
+						<div class="col-sm-4">
+							{{ form_label(form.categorie, "categorie", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+								{{ form_errors(form.categorie) }}
+
+							<div class="col-sm-7">
+								{{ form_widget(form.categorie, {'attr': {'class': 'form-control'}}) }}
+							</div>
+						</div>
+
+						<div class="col-sm-4">
+							{{ form_label(form.rubrique, "rubrique", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+								{{ form_errors(form.rubrique) }}
+
+							<div class="col-sm-7">
+								{{ form_widget(form.rubrique, {'attr': {'class': 'form-control'}}) }}
+							</div>
+						</div>
+
+						<div class="col-sm-4">
+							{{ form_label(form.reference, "reference", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+								{{ form_errors(form.reference) }}
+
+							<div class="col-sm-7">
+								{{ form_widget(form.reference, {'attr': {'class': 'form-control'}}) }}
+							</div>
+						</div>
+
+						<div class="col-sm-4">
+							{{ form_label(form.url, "url", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+								{{ form_errors(form.url) }}
+
+							<div class="col-sm-7">
+								{{ form_widget(form.url, {'attr': {'class': 'form-control'}}) }}
+							</div>
+						</div>
+
+						<div class="col-sm-4">
+							{{ form_label(form.prix, "prix", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+								{{ form_errors(form.prix) }}
+
+							<div class="col-sm-7">
+								{{ form_widget(form.prix, {'attr': {'class': 'form-control'}}) }}
+							</div>
+						</div>
+
+						<div class="col-sm-4">
+							{{ form_label(form.infos, "infos", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+								{{ form_errors(form.infos) }}
+
+							<div class="col-sm-7">
+								{{ form_widget(form.infos, {'attr': {'class': 'form-control'}}) }}
+							</div>
+						</div>
+
+						<div id="imageType">
+							<div class="col-sm-4" style="width:500px;height: 70px;border:1px solid gray;margin-top:30px;padding-top:5px;">
+								{{ form_label(form.photo, "photo", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+									{{ form_errors(form.photo) }}
+
+								<div class="col-sm-7">
+									{{ form_widget(form.photo, {'attr': {'class': ''}}) }}
+								</div>
+							</div>
+						</div>
+						<br/>
+						<div class="btn-valide">
+							{{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
+						</div>
+						
+
+					{{ form_rest(form) }}
+    				{{ form_end(form) }}
+		</div>
+	</div>
+	</section>
+{% endblock %}
+
+
+
+	

@@ -1,0 +1,36 @@
+{% extends "GGBoutiqueBundle::layout.html.twig" %}
+
+
+{% block parallax1 %}
+	{% endblock %} 
+
+	{% block parallax2 %}
+	{% endblock %}
+
+	{% block menu %}
+	{% endblock %}
+
+	{% block title %}
+		Inscription
+	{% endblock %}  
+
+	{% block body%}
+		{% block fos_user_content %}
+			<section class="section-p-30px pages-in" >
+				<div class="container">
+					<div class="row">
+						<span style="color:green;">Merci de rentrer votre adresse e-mail, un mail vous sera envoyé afin de créer un nouveau mot de passe.</span>
+						<form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
+							<div>
+								<label for="username">E-mail</label>
+								<input type="text" id="username" name="username" required="required" />
+							</div>
+							<div>
+								<input type="submit" value="envoyer" />
+							</div>
+						</form>
+					</div>
+				</div>
+			</section>
+		{% endblock %}
+	{% endblock %}

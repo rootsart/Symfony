@@ -1,0 +1,46 @@
+gg_paiement:
+    resource: "@GGPaiementBundle/Resources/config/routing.yml"
+    prefix:   /boutique/panier/paiement
+
+gg_admin:
+    resource: "@GGBoutiqueBundle/Resources/config/routing.yml"
+    prefix:   /boutique/admin
+
+
+gg_boutique:
+    resource: "@GGBoutiqueBundle/Resources/config/routing.yml"
+    prefix:   /boutique
+
+#permet de booter sur la methode index de BoutiqueController via les annotations sur cette methode
+app:
+    resource: '@GGBoutiqueBundle/Controller/'
+    type: annotation
+
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+
+
+fos_user_profile:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix: /boutique/user/profile
+
+
+fos_user_register:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix: /register
+
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /resetting
+
+
+fos_user_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix: /profile
+
+
+
+
+

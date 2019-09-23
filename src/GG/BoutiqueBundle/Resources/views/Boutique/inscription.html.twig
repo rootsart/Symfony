@@ -1,0 +1,88 @@
+{% extends "GGBoutiqueBundle::layout.html.twig" %}
+
+{% block parallax1 %}
+{% endblock %} 
+
+{% block parallax2 %}
+{% endblock %}
+
+{% block menu %}
+{% endblock %}
+
+{% block title %}
+	Inscription
+{% endblock %}  
+
+
+ {% block body %}  
+    <section class="section-p-30px pages-in">
+	<div class="container">
+		<div class="row">
+				
+					{{ form_start(form, {'attr': {'class': 'contact-form'}}) }} 
+					{{ form_errors(form) }}
+						<div id="identite" class="col-sm-4" style="border:1px solid #f7f7f7;margin-bottom:20px;padding:10px;">
+							<div class="col-sm-7" style="border:solid black 0px;">
+									{{ form_label(form.civilite, "civilite", {'label_attr': {'class': 'col-sm-5 control-label'}}) }}
+										{{ form_errors(form.civilite) }}
+
+									<div class="col-sm-5">
+										{{ form_widget(form.civilite, {'attr': {'class': ''}}) }}
+									</div>
+							</div><br><br>
+							<div class="col-sm-4" style="border:solid black 0px;">
+									{{ form_label(form.nom, "Nom", {'label_attr': {'class': 'col-sm-3 control-label', 'style':'margin-left:100px;'}}) }}
+										{{ form_errors(form.nom) }}
+
+									<br CLEAR="all"><div class="col-sm-7" style="margin-left:100px;">
+										{{ form_widget(form.nom, {'attr': {'class': ''}}) }}
+									</div>
+							</div><br CLEAR="all">
+
+							<div class="col-sm-4" style="border:solid black 0px;">
+									{{ form_label(form.prenom, "Prénom", {'label_attr': {'class': 'col-sm-3 control-label', 'style':'margin-left:100px;'}}) }}
+										{{ form_errors(form.prenom) }}
+
+									<br CLEAR="all"><div class="col-sm-7" style="margin-left:100px;">
+										{{ form_widget(form.prenom, {'attr': {'class': ''}}) }}
+									</div>
+							</div>
+						</div><br><br CLEAR="all">
+						<!--div id="adresse" style="margin-left:208px;"-->
+							<div class="col-sm-4" style="border:solid #f7f7f7 1px;margin-bottom:20px;padding:10px;">
+									{{ form_label(form.adresse, "adresse", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+										{{ form_errors(form.adresse) }}
+
+									<div class="col-sm-7">
+										{{ form_widget(form.adresse, {'attr': {'class': 'adresse'}}) }}
+									</div>
+							</div><br CLEAR ="all">
+						
+						
+							<div class="col-sm-4" style="border:solid #f7f7f7 1px; display:inline-block;padding:10px;">
+									{{ form_label(form.identifiants, "identifiants", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+										{{ form_errors(form.identifiants) }}
+
+									<div class="col-sm-7">
+										{{ form_widget(form.identifiants, {'attr': {'class': 'adresse'}}) }}
+									</div>
+									<!--div class="verification-mdp">
+									</div-->
+							</div>
+						
+							
+
+							
+	</div>						
+					{{ form_widget(form.save, {'attr': {'class': 'btn btn-primary'}}) }}
+
+					{{ form_rest(form) }}
+    				{{ form_end(form) }}
+		</div>
+	</div>
+	</section>
+{% endblock %}
+
+
+
+	

@@ -1,0 +1,31 @@
+{% extends "GGBoutiqueBundle::layout.html.twig" %}
+
+{% block parallax1 %}
+{% endblock %} 
+
+{% block parallax2 %}
+{% endblock %}
+
+{% block menu %}
+{% endblock %}
+
+{% block title %}
+	Profile
+{% endblock %}  
+
+{% block body%}
+{% trans_default_domain 'FOSUserBundle' %}
+<div id="titre_profile" ><span><H5>PROFILE ROOTS</H5><span></div>
+{#menu_knp#}
+<div id="menu_knp" style="">
+	{{ knp_menu_render('main') }}
+</div>
+
+<div class="fos_user_user_show" id="fos_user_user_show" style="border:1px solid Gainsboro;margin-left:20px;width:800px;display:inline-block;min-height:10px;background:Gainsboro;padding:7px;">
+	<span style="font-size: 14px;font-family: "Times New Roman", Times, serif;color:gray;">
+			<i><b>Rootsart & Créations </b>vous souhaite la bienvenue sur votre profile <b>{{ user.username }}</b>.<br>
+			En utilisant le menu ci-contre, vous aurez accès à toutes les informations vous concernant, ainsi qu'au suivi de vos commandes etc ...</i>
+	</sapn>
+</div>
+
+{% endblock %}

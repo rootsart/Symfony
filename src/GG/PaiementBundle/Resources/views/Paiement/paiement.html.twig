@@ -1,0 +1,41 @@
+
+{% extends "GGBoutiqueBundle::layout.html.twig" %}
+{% form_theme form_paiement 'GGPaiementBundle:Paiement:theme.html.twig' %}
+
+{% block parallax1 %}
+{% endblock %} 
+
+{% block parallax2 %}
+{% endblock %}
+
+{% block menu %}
+{% endblock %}
+
+{% block title %}
+  Paiement
+{% endblock %}  
+
+
+{% block body %}
+	<div style="width:100%;text-align:center;margin-top:50px;">
+
+		{{ form_start(form_paiement, {'method': 'post', 'action': path('gg_paiement_payer',{'montant': montant}), 'attr': {'class': '', 'style':'border:solid 0.1em #ebebeb;background:#d5e1d6; display:inline-block;padding:10px;'}}) }}
+		 {{ form_label(form_paiement, 'Paiement Sécurisé', {'label_attr': {'class': 'foo', 'style' : 'color:green;'}} ) }}
+		
+		        {{ form_widget(form_paiement) }}
+       
+		    
+		        <div>
+		        	En choisissant "payer", vous serez redirrigé vers le site de Paypal, afin de procéder au paiement. <a href="{{path('gg_boutique_panier')}}" style="">back</a>
+		        </div>
+		        <di>
+		         <button type="submit" value="submit" class="btn" id="" style="display:block; width:132px;padding:2px; margin-left:auto;margin-right:auto;">Payer {{montant}} $</button>
+		  		</div>
+		{{ form_end(form_paiement) }}
+
+
+
+	</div>
+
+
+{% endblock %} 

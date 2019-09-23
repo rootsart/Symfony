@@ -1,0 +1,90 @@
+{% extends "GGBoutiqueBundle::layout.html.twig" %}
+
+{% block parallax1 %}
+{% endblock %} 
+
+{% block parallax2 %}
+{% endblock %}
+
+{% block menu %}
+{% endblock %}
+
+{% block title %}
+	Contact
+{% endblock %}  
+
+
+
+ {% block contentContact %} 
+    <!-- CONTENT START -->
+    <div class="content"> 
+
+      <!-- Map -->
+      <div class="container animate fadeInUp" data-wow-delay="0.5s">
+        <div class="section-p-60px end-season" data-stellar-background-ratio="0.9">
+          <div class="row">
+            <div class="col-md-6 text-center">
+              <h5><br/></h5>
+              <h2><br/></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--======= Contact Us =========-->
+      <section class="section-p-30px conact-us no-padding-b animate fadeInUp" data-wow-delay="0.5s"> 
+        <!--======= CONTACT FORM =========-->
+        <div class="container"> 
+          <!-- Tittle -->
+          <div class="tittle">
+            <p>N'hésitez pas à nous écrire nous prendrons le temps de vous répondre </p>
+          </div>
+          <div class="contact section-p-30px no-padding-b">
+            <div class="contact-form"> 
+              <!--======= FORM  =========-->
+              {% block formMail %}
+                {{ form_start(formMail, {'attr': {'class': 'contact-form', 'id': 'contact_form', 'method':'POST', 'action':''}}) }} 
+                  {{ form_errors(formMail) }}
+                  <div class="row">
+                    <ul class="col-md-6">
+                      <div class="row">
+                        <li class="col-sm-12">
+                          <label>
+                            {{ form_widget(formMail.Email, {'attr': {'class': 'form-control', 'name' : 'email', 'placeholder' : 'adresse mail'}}) }}
+                          </label>
+                        </li>
+                      </div>
+                      <div class="row">
+                        <li class="col-sm-12">
+                          <label>
+                            {{ form_widget(formMail.Sujet, {'attr': {'class': 'form-control', 'name' : 'sujet', 'placeholder' : 'sujet'}}) }}
+                          </label>
+                        </li>
+                      </div>
+                      <div class="row">
+                        <li class="col-sm-12">
+                          <label>
+                            {{ form_widget(formMail.Message, {'attr': {'class': 'form-control', 'placeholder' : 'message'}}) }}
+                          </label>
+                        </li>
+                      </div>
+                      <li class="col-sm-12 no-margin">
+                        {{ form_widget(formMail.Envoyer, {'attr': {'class': 'btn btn-primary'}}) }}
+                      </li>
+                    </ul>
+                  </div>
+                  {{ form_rest(formMail) }}
+                {{ form_end(formMail) }}
+              {% endblock %}
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--  Tittle -->
+      <div class="tittle tittle-2">
+        <p class="font-playfair">Nous vous répondrons dans les plus brefs délais</p>
+      </div>
+    </div>
+
+  {% endblock %}
+

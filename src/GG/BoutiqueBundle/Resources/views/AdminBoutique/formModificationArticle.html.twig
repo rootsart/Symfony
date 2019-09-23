@@ -1,0 +1,95 @@
+
+{% block title %}
+ Formulaire modification
+{% endblock %}
+{% block body %}  
+	{{ form_start(formarticle, {'attr': {'class': 'contact-form', 'id':'form_update_article', 'style':'background:#C0C0C0;padding-top:2em;'}}) }} 
+								{{ form_errors(formarticle) }}
+
+							
+							<div class="col-sm-4">
+								{{ form_label(formarticle.reference, "reference", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+									{{ form_errors(formarticle.reference) }}
+
+								<div class="col-sm-7">
+									{{ form_widget(formarticle.reference, {'attr': {'class': 'form-control'}}) }}
+								</div>
+							</div>
+							<div class="col-sm-4">
+								{{ form_label(formarticle.url, "url", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+									{{ form_errors(formarticle.url) }}
+
+								<div class="col-sm-7">
+									{{ form_widget(formarticle.url, {'attr': {'class': 'form-control'}}) }}
+								</div>
+							</div>
+							<div class="col-sm-4">
+								{{ form_label(formarticle.prix, "prix", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+									{{ form_errors(formarticle.prix) }}
+
+								<div class="col-sm-7">
+									{{ form_widget(formarticle.prix, {'attr': {'class': 'form-control'}}) }}
+								</div>
+							</div>
+							<div class="col-sm-4">
+								{{ form_label(formarticle.infos, "infos", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+									{{ form_errors(formarticle.infos) }}
+
+								<div class="col-sm-7">
+									{{ form_widget(formarticle.infos, {'attr': {'class': 'form-control'}}) }}
+								</div>
+							</div>
+							<div class="col-sm-4">
+								{{ form_label(formarticle.stock, "stock", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+									{{ form_errors(formarticle.stock) }}
+
+								<div class="col-sm-7">
+									{{ form_widget(formarticle.stock, {'attr': {'class': 'form-control'}}) }}
+								</div>
+							</div>
+							<div class="col-sm-4">
+								{{ form_label(formarticle.level, "level", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+									{{ form_errors(formarticle.level) }}
+
+								<div class="col-sm-7">
+									{{ form_widget(formarticle.level, {'attr': {'class': 'form-control'}}) }}
+								</div>
+							</div>
+							<div class="col-sm-4">
+								{{ form_label(formarticle.categorie, "categorie", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+									{{ form_errors(formarticle.categorie) }}
+
+								<div class="col-sm-7">
+									{{ form_widget(formarticle.categorie, {'attr': {'class': 'form-control'}}) }}
+								</div>
+							</div>
+							<div class="col-sm-4">
+								{{ form_label(formarticle.rubrique, "rubrique", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+									{{ form_errors(formarticle.rubrique) }}
+
+								<div class="col-sm-7">
+									{{ form_widget(formarticle.rubrique, {'attr': {'class': 'form-control'}}) }}
+								</div>
+							</div>
+							
+								<div class="col-sm-4" style="width:40%;height: 70px;border:1px solid Silver;margin-top:30px;margin-left:350px;padding-top:5px;background:Gainsboro;">
+									{{ form_label(formarticle.photo, "photo", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+										{{ form_errors(formarticle.photo) }}
+
+									<div class="col-sm-7">
+										{{ form_widget(formarticle.photo, {'attr': {'class': ''}}) }}
+									</div>
+									
+									<img src="{{ asset(article) }}" alt="" width="66" height="59" style="border:1px solid Silver; margin-left:6px;"/> 
+									
+								</div>
+
+
+							<br/>
+							<div class="btn-valide">
+								{{ form_widget(formarticle.save, {'attr': {'class': 'btn btn-primary'}}) }}
+							</div>
+		{{ form_rest(formarticle) }}
+		{{ form_end(formarticle) }}
+		<div id='contnair'></div>
+{% endblock %}

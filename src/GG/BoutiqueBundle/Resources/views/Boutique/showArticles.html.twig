@@ -1,0 +1,75 @@
+{% extends "GGBoutiqueBundle::layout.html.twig" %}
+
+	{% block parallax1 %}
+	{% endblock %} 
+
+	{% block parallax2 %}
+	{% endblock %} 
+
+	{% block title %}
+		Boutique
+	{% endblock %}
+
+
+
+	{% block body %}
+<section class="section-p-30px pages-in">
+	<div class="container">
+		<div class="row"> 
+		<!--======= ITEMS =========-->
+			<div class="col-sm-12 animate fadeInUp" data-wow-delay="0.5s">
+				<div class="items-short-type animate fadeInUp" data-wow-delay="0.5s"> 
+					<!--======= GRID LIST STYLE =========--><!--======= SHORT BY =========--><!--======= VIEW ITEM NUMBER =========-->
+					<div class="view-num"></div>
+				</div>
+				<div class="popurlar_product animate fadeInUp" data-wow-delay="1s">
+					<ul class="row"> 
+					     {% if liste_Articles is defined %} 
+				     		
+							{% for article in liste_Articles %} 
+								{% if article.stock >0 %}
+									<li class="col-sm-4 animate fadeIn" data-wow-delay="0.5s">
+									<div class="items-in">
+										{% if article.level == 'promo' %} 
+										<div class="off-tag">promo</div>
+										{% elseif article.level == 'new' %} 
+										<div class="new-tag">New</div>
+										{% endif %}
+										
+										<img src="{{ asset(article.photo.url) }}" alt="" width="360" height="298"/> 
+											<div class="over-item">
+												<ul class="animated fadeIn">
+													<li>
+														<a href="{{ asset(article.photo.url) }}" data-lighter><i><img src="{{ asset('images/pot/voir.png') }}"/></i></a>
+													</li>
+													<li class="full-w">
+														{#% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+														
+														{% else %}
+															<div class="btn" alt="Merci de vous connecter" title="Merci de vous connecter">Mettre au panier</div>
+														{% endif %#}
+														<a class="btn" href="{{path('gg_boutique_ajoutPanier')}}" id="{{article.id}}">Ajouter au Panier</a>
+													</li>
+													<!-- Rating Stars -->
+												</ul>
+											</div> 
+										</div>
+										<div class="details-sec">{{article.getPrix()}} €</div>
+										<div class="details-sec">{{article.getInfos()}}</div> 
+									</li>
+								{% endif%}
+							{% endfor %}
+							
+					     {% else %}
+					     	{{message}}
+					     {% endif %}
+		    	
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+			 
+
+	{% endblock %}

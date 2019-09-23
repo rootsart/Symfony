@@ -1,0 +1,20 @@
+
+
+{% block body%}
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+
+	<dl id="infos_persos" style="border:0px solid gray;display:block;width:100%;float:left;padding-left:7px;display:inline-block;">
+		<dt style="background:;text-align:left;color:green;">Informations Personnelles</dt>
+		<dd><b>prénom</b>: {{ user.personne.prenom }}</dd>
+		<dd><b>nom:</b> {{ user.personne.nom }}</dd>
+		<dd><b>{{ 'profile.show.username'|trans }}:</b> {{ user.username }}</dd>
+		<dd><b>Role:</b>{% for role in user.roles%} {{role}} {% endfor %}</dd>
+		<dd><b>{{ 'profile.show.email'|trans }}:</b> {{ user.email }}</dd>
+		<dd><b>Sexe:</b>{% for civilite in user.personne.civilite%} {{civilite}} {% endfor %}</dd>
+		<dd><b>adresse:</b> {{ user.adress.numero }}, {{ user.adress.rue }} {{ user.adress.codepostal }} {{ user.adress.ville }}</dd>
+		<dd><b>Date d'inscription :</b> {{ user.dateInscription.date }}</dd>
+	</dl>
+
+{% endblock %}

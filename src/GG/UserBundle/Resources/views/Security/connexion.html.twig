@@ -1,0 +1,36 @@
+
+
+{% block connexion %}
+{% if error is defined and error is not empty %}
+
+    <div class="alert alert-danger">{{ error.message }}</div>
+
+  {% endif %}
+    {{ form_start(formConn, {'attr': {'class': 'contact-form', 'method':'POST', 'action':'', 'id':'formConn'}}) }} 
+    {{ form_errors(formConn) }}
+        <div class="col-sm-5">
+            {{ form_label(formConn.email, "email:", {'label_attr': {'class': 'col-sm-3 control-label'}}) }}
+            {{ form_errors(formConn.email) }}
+
+            <div class="col-sm-6">
+                {{ form_widget(formConn.email, {'attr': {'class': 'input-email'}}) }}
+            </div>
+        </div>
+
+        <div class="col-sm-5">
+            {{ form_label(formConn.password, "password:", {'label_attr': {'class': 'col-sm-4 control-label'}}) }}
+            {{ form_errors(formConn.password) }}
+
+            <div class="col-sm-6">
+                {{ form_widget(formConn.password, {'attr': {'class': 'input-password', 'alt':'Entrer votre mot de passe, puis presser la touche Entrée', 'title':'Entrez votre mot de passe, puis presser la touche Entrée'}}) }}
+            </div>
+        </div>
+        
+                            <button type="submit" value="submit" class="btn" id="" style="display:none">Ok</button>
+                        
+                
+        
+    {{ form_rest(formConn) }}
+    {{ form_end(formConn) }}
+
+{% endblock %}

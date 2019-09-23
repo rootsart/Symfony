@@ -1,0 +1,39 @@
+{% extends "GGBoutiqueBundle::layout.html.twig" %}
+
+	{% block parallax1 %}
+	{% endblock %} 
+
+	{% block parallax2 %}
+	{% endblock %}
+
+	{% block menu %}
+	{% endblock %}
+
+	{% block title %}
+		Inscription
+	{% endblock %}  
+
+	{% block body%}
+		{% block fos_user_content %}
+			<section class="section-p-30px pages-in" >
+				<div class="container">
+					<div class="row">
+						
+							{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'inscription-form', 'style':'background-color:rgba(0,0,0,0.2);width:100%;height:650px;padding:10px;border-radius:10px;border:solid 1.5px #808080;'}}) }}
+								<div id="identite" class="col-sm-4" style="border:px solid gray;margin-bottom:20px;padding:10px;width:100%;height:650px;">
+									<!--div class="col-sm-7" style="border:solid black 1px;background:gray;"-->
+										<div style="color:green;"><b>IDENTIFIANTS</b></div>
+						    			{{ form_widget(form) }}
+						    			<button type="submit" value="submit" class="btn" id="" style="margin-left:30%;">Enregistrer</button>			
+									<!--/div-->	
+								</div>
+								
+									
+								
+								{{ form_rest(form) }}
+							{{ form_end(form) }}
+					</div>
+				</div>
+			</section>
+		{% endblock %}
+	{% endblock %}

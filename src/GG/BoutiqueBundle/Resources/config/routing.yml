@@ -1,0 +1,137 @@
+
+
+gg_boutique_article:
+    path:     /
+    defaults:  
+        _controller: GGBoutiqueBundle:Boutique:show
+        id: #paramatre facultatif
+    requirements:
+        id:   \d{2}
+
+gg_boutique_article_categorie:
+    path:     /categorie/{categorie}
+    defaults: {_controller: GGBoutiqueBundle:Boutique:showByCategorie}
+
+gg_boutique_article_rubrique:
+    path:     /rubrique/{rubrique}
+    defaults: {_controller: GGBoutiqueBundle:Boutique:showByRubrique}
+
+
+
+gg_admin_index:
+    path:     /admin
+    defaults: { _controller: GGBoutiqueBundle:AdminBoutique:indexAdmin }
+
+gg_admin_ajout:
+    path:     /ajout
+    defaults: { _controller: GGBoutiqueBundle:AdminBoutique:ajouterArticle }
+
+gg_admin_modifier_default:
+    path:     /modifier
+    defaults: { _controller: GGBoutiqueBundle:AdminBoutique:modifierArticle }
+
+gg_admin_enregistre_modification:
+    path:    /enregistreModif
+    defaults: { _controller: GGBoutiqueBundle:AdminBoutique:enregistreModification }
+
+gg_admin_update_article_flush:
+    path:    /updateArticle
+    defaults: { _controller: GGBoutiqueBundle:AdminBoutique:updateArticleFlush }
+
+gg_admin_formulaire_modification_article:
+    path:    /formulaireModification
+    defaults: { _controller: GGBoutiqueBundle:AdminBoutique:formulaireModificationArticle }
+    requirements:
+        _method: GET | POST
+
+gg_admin_supprimer:
+    path:     /supprimer/{id}
+    defaults: { _controller: GGBoutiqueBundle:AdminBoutique:supprimerArticle }
+    requirements:
+        id: \d+
+
+gg_admin_supprimer_default:
+    path:     /supprimer
+    defaults: { _controller: GGBoutiqueBundle:AdminBoutique:supprimerArticle }
+    requirements:
+        id: \d+
+
+
+
+
+
+gg_boutique_inscription:
+    path:     /inscription
+    defaults: { _controller: GGBoutiqueBundle:Boutique:inscription }
+
+gg_boutique_deconnexion:
+    path:     /deconnexion
+    defaults: { _controller: GGBoutiqueBundle:Boutique:deconnexion }
+
+gg_boutique_connexion:
+    path:     /connexion
+    defaults: { _controller: GGBoutiqueBundle:Boutique:connexion }
+
+gg_boutique_contact:
+    path:     /contact
+    defaults: { _controller: GGBoutiqueBundle:Boutique:contact }
+
+gg_boutique_panier:
+    path:     /panier
+    defaults: { _controller: GGBoutiqueBundle:Panier:showPanier }
+
+gg_boutique_ajoutPanier:
+    path:     /ajoutPanier
+    defaults: { _controller: GGBoutiqueBundle:Panier:ajoutPanier }
+
+
+gg_boutique_supPanier:
+    path:     /supPanier
+    defaults: { _controller: GGBoutiqueBundle:Panier:supPanier }
+
+
+gg_boutique_viderPanier:
+    path:     /viderPanier
+    defaults: { _controller: GGBoutiqueBundle:Panier:viderPanier }
+
+gg_boutique_mail:
+    path:     /mail
+    defaults: { _controller: GGBoutiqueBundle:Mail:mail }
+
+gg_boutique_mailService:
+    path:     /mailService/{to}{text}{sujet}
+    defaults: { _controller: GGBoutiqueBundle:Mail:mailService }
+
+fos_user_security_login:
+   path:     /login
+   defaults: { _controller: GGUserBundle:Security:login }
+
+fos_user_resetting_request:
+   path:     /resetting/request
+   defaults: { _controller: GGUserBundle:Security:changePwd_Email }
+
+fos_user_profile_index:
+    path: /profile/index
+    defaults: { _controller: GGUserBundle:Profile:profileIndex }
+
+fos_user_profile_show_infos:
+    path: /profile/infos
+    defaults: {_controller: GGUserBundle:Profile:showInfos}
+#fos_user_security_check:
+    #path: /login_check
+
+#fos_user_security_logout:
+   #path: /logout
+
+gg_security_formulaire_inscription:
+    path: /formulaireinscription
+    defaults: {_controller: GGUserBundle:Security:forminscription}
+
+
+gg_boutique_commande:
+    path:     /commande
+    defaults: { _controller: GGUserBundle:Commande:creerCommande }
+
+
+
+
